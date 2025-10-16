@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+          
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Choose Your Plan</h1>
+            <p class="text-gray-600">Select the perfect package for your workshop</p>
+        </div>
+
+          
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex flex-wrap gap-6 items-center justify-center">
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-medium text-gray-700">Product</label>
+                    <div class="flex gap-2 bg-gray-100 p-1 rounded-lg">
+                        <button id="btn-cars" class="product-btn px-6 py-2 rounded-md font-medium transition-all active">
+                            Cars
+                        </button>
+                        <button id="btn-trucks" class="product-btn px-6 py-2 rounded-md font-medium transition-all">
+                            Trucks
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-medium text-gray-700">Currency</label>
+                    <div class="flex gap-2 bg-gray-100 p-1 rounded-lg">
+                        <button id="btn-gbp" class="currency-btn px-6 py-2 rounded-md font-medium transition-all active">
+                            GBP (£)
+                        </button>
+                        <button id="btn-eur" class="currency-btn px-6 py-2 rounded-md font-medium transition-all">
+                            EUR (€)
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-medium text-gray-700">Billing Period</label>
+                    <div class="flex gap-2 bg-gray-100 p-1 rounded-lg">
+                        <button id="btn-monthly" class="period-btn px-6 py-2 rounded-md font-medium transition-all active">
+                            Monthly
+                        </button>
+                        <button id="btn-annual" class="period-btn px-6 py-2 rounded-md font-medium transition-all">
+                            Annual
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pricing-container" class="grid md:grid-cols-2 gap-8">
+             
+        </div>
+    </div>
+
+    <template id="pricing-card-template">
+  <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+    <div class="badge"></div>
+    <h3 class="text-2xl font-bold text-gray-900 mb-2"></h3>
+    <div class="mb-6">
+      <div class="flex items-baseline gap-1">
+        <span class="price text-4xl font-bold text-gray-900"></span>
+        <span class="period text-gray-600"></span>
+      </div>
+    </div>
+    <div class="mb-6">
+      <div class="text-sm text-gray-600 mb-2">Number of users:</div>
+      <div class="users flex gap-2"></div>
+    </div>
+    <a class="subscribe-btn block w-full text-center py-3 px-6 rounded-lg font-semibold transition-colors mb-6"></a>
+    <div class="features space-y-3">
+      <div class="text-sm font-semibold text-gray-900 mb-3">Features included:</div>
+    </div>
+  </div>
+</template>
+
+    <style>
+        .product-btn.active,
+        .currency-btn.active,
+        .period-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        .product-btn:not(.active),
+        .currency-btn:not(.active),
+        .period-btn:not(.active) {
+            background-color: transparent;
+            color: #4b5563;
+        }
+
+        .product-btn:hover,
+        .currency-btn:hover,
+        .period-btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+
+    <script src="app.js"></script>
+</body>
+</html>
